@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Book List</h1>
+    <form method="POST">
+        <div>
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                {% for cat in categories %}
+                    {% if cat == selected_category %}
+                        <option value="{{ cat }}" selected>{{ cat }}</option>
+                    {% else %}
+                        <option value="{{ cat }}">{{ cat }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="book_name">Book Name:</label>
+            <input type="text" id="book_name" name="book_name">
+            <button type="submit">Add Book</button>
+        </div>
+    </form>
+    <ul id="book-list">
+        {% for book in book_list %}
+            <li>
+                <span class="book-name">{{ book }}</span>
+                <span class="category-name">{{ selected_category }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <script>
+        var categorySelect = document.getElementById('category');
+        categorySelect.addEventListener('change', function() {
+            var url = window.location.href.split('?')[0] + '?category=' + categorySelect.value;
+            window.location.href = url;
+        });
+    </script>
+{% endblock %}

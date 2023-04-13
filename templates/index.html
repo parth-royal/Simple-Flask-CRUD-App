@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+    <h1>Welcome to the Library Book Listing App!</h1>
+
+    <script>
+        // Dynamic search functionality
+        $(document).ready(function() {
+            $('#search-input').on('input', function() {
+                const query = $('#search-input').val().trim();
+                $.get('/search', { q: query }, function(data) {
+                    const results = data.map(function(result) {
+                        return result[0] + ' (' + result[1] + ')';
+                    });
+                    $('#search-results').empty();
+                    for (const result of results) {
+                        $('#search-results').append('<li>' + result + '</li>');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <form>
+        <label for="search-input">Search for a book:</label>
+        <input type="text" id="search-input" name="q">
+    </form>
+    <ul id="search-results"></ul>
+
+
+{% endblock %}

@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+nav {
+  flex: 1; /* This makes the nav element grow to fill the available space */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between; /* This distributes the li elements evenly */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  color: #999;
+  margin-top: 20px;
+}
+
+/* Media queries for different screen sizes */
+
+@media screen and (max-width: 768px) {
+  /* Styles for screens up to 768px wide */
+  
+  .container {
+    max-width: 90%; /* Reduce the max width of the container */
+  }
+  
+  header {
+    flex-direction: column; /* Stack the nav and other elements vertically */
+    align-items: flex-start; /* Align the elements to the left */
+  }
+  
+  nav {
+    margin-bottom: 20px; /* Add some space between the nav and other elements */
+  }
+  
+  nav ul {
+    flex-direction: column; /* Stack the li elements vertically */
+    align-items: flex-start; /* Align the elements to the left */
+  }
+  
+  nav ul li {
+    margin-right: 0; /* Remove the margin between the li elements */
+    margin-bottom: 10px; /* Add some space between the li elements */
+  }
+  
+  footer {
+    font-size: 14px; /* Reduce the font size of the footer text */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Styles for screens up to 480px wide */
+  
+  nav ul li a {
+    font-size: 14px; /* Reduce the font size of the nav links */
+  }
+}
+
+
+nav {
+  background-color: red;
+}
+
+nav ul li a {
+  color: yellow;
+}
