@@ -4,11 +4,9 @@ from datetime import date
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 # Dummy data for book categories and list of books
-categories = ['Fiction', 'Non-Fiction', 'Mystery']
+categories = ['Hospitality', 'Civil', 'Chemistry', 'Physics', 'Dictionaries', 'Mechanical', 'Fashion Design', 'Misc', 'Law', 'Ele&Electronics'] 
 books = {
-    'Fiction': ['The Great Gatsby', 'To Kill a Mockingbird', '1984'],
-    'Non-Fiction': ['Blink', 'The 7 Habits of Highly Effective People', 'Thinking, Fast and Slow'],
-    'Mystery': ['The Adventures of Sherlock Holmes', 'The Da Vinci Code', 'The Girl with the Dragon Tattoo']
+        'Hospitality': [], 'Civil':[], 'Chemistry':[], 'Physics':[], 'Dictionaries':[], 'Mechanical':[], 'Fashion Design':[], 'Misc':[], 'Law':[], 'Ele&Electronics':[]
 }
 
 # Route for index page
