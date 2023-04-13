@@ -4,9 +4,9 @@ from datetime import date
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 # Dummy data for book categories and list of books
-categories = ['Hospitality', 'Civil', 'Chemistry', 'Physics', 'Dictionaries', 'Mechanical', 'Fashion Design', 'Misc', 'Law', 'Ele&Electronics'] 
+categories = ['Hospitality', 'Civil', 'Chemistry', 'Physics', 'Dictionaries', 'Mechanical', 'Fashion Design', 'Misc', 'Law', 'Electronics'] 
 books = {
-        'Hospitality': [], 'Civil':[], 'Chemistry':[], 'Physics':[], 'Dictionaries':[], 'Mechanical':[], 'Fashion Design':[], 'Misc':[], 'Law':[], 'Ele&Electronics':[]
+        'Hospitality': [], 'Civil':[], 'Chemistry':[], 'Physics':[], 'Dictionaries':[], 'Mechanical':[], 'Fashion Design':[], 'Misc':[], 'Law':[], 'Electronics':[]
 }
 
 # Route for index page
