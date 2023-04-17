@@ -104,3 +104,20 @@ nav {
 nav ul li a {
   color: yellow;
 }
+
+
+
+body {
+    background-image: url("../images/one.png");
+    color: yellow;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    z-index: -1;
+}
+footer {
+  clear: both;
+  color: yellow;
+}
+
