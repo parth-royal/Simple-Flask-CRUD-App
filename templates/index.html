@@ -1,32 +1,55 @@
-{% extends 'base.html' %}
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+    <h1>User List</h1>
+    {% for user in datas %}
+    <div>
+        <p>Username: {{ user['uname'] }}</p>
+        <p>Contact: {{ user['contact'] }}</p>
+        <a href="{{ url_for('edit_user', uid=user['uid']) }}">Edit</a>
+        <a href="{{ url_for('delete_user', uid=user['uid']) }}">Delete</a>
+    </div>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Add User</h2>
+    <form action="{{ url_for('add_user') }}" method="post">
+        <label for="uname">Username:</label>
+        <input type="text" id="uname" name="uname" required><br>
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" required><br>
+        <input type="submit" value="Add User">
+    </form>
+</body>
+</html>
+ -->
+ {% extends 'base.html' %}
+
+{% block title %}User List{% endblock %}
 
 {% block content %}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
-    <h1>Welcome to the Library Book Listing App!</h1>
+    <h1>User List</h1>
+    {% for user in datas %}
+    <div class="user-card">
+        <h2>Username: {{ user['uname'] }}</h2>
+        <p>Contact: {{ user['contact'] }}</p>
+        <a href="{{ url_for('edit_user', uid=user['uid']) }}">Edit</a>
+        <a href="{{ url_for('delete_user', uid=user['uid']) }}">Delete</a>
+    </div>
+    {% endfor %}
 
-    <script>
-        // Dynamic search functionality
-        $(document).ready(function() {
-            $('#search-input').on('input', function() {
-                const query = $('#search-input').val().trim();
-                $.get('/search', { q: query }, function(data) {
-                    const results = data.map(function(result) {
-                        return result[0] + ' (' + result[1] + ')';
-                    });
-                    $('#search-results').empty();
-                    for (const result of results) {
-                        $('#search-results').append('<li>' + result + '</li>');
-                    }
-                });
-            });
-        });
-    </script>
+    <hr>
 
-    <form>
-        <label for="search-input">Search for a book:</label>
-        <input type="text" id="search-input" name="q">
+    <h2>Add User</h2>
+    <form class="add-user-form" action="{{ url_for('add_user') }}" method="post">
+        <label for="uname">Username:</label>
+        <input type="text" id="uname" name="uname" required><br>
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" required><br>
+        <input type="submit" value="Add User">
     </form>
-    <ul id="search-results"></ul>
-
-
 {% endblock %}

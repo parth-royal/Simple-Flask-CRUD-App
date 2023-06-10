@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete User</title>
+</head>
+<body>
+    <h1>Delete User</h1>
+    <p>Are you sure you want to delete this user?</p>
+    <form action="{{ url_for('delete_user', uid=datas['uid']) }}" method="get">
+        <p>Username: {{ datas['uname'] }}</p>
+        <p>Contact: {{ datas['contact'] }}</p>
+        <input type="submit" value="Delete User">
+    </form>
+</body>
+</html>

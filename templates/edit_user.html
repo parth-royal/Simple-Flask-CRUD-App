@@ -1,0 +1,31 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User</title>
+</head>
+<body>
+    <h1>Edit User</h1>
+    <form action="{{ url_for('edit_user', uid=datas['uid']) }}" method="post">
+        <label for="uname">Username:</label>
+        <input type="text" id="uname" name="uname" value="{{ datas['uname'] }}" required><br>
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" value="{{ datas['contact'] }}" required><br>
+        <input type="submit" value="Update User">
+    </form>
+</body>
+</html>
+ -->
+ {% extends 'base.html' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block content %}
+    <h1>Edit User</h1>
+    <form class="edit-user-form" action="{{ url_for('edit_user', uid=datas['uid']) }}" method="post">
+        <label for="uname">Username:</label>
+        <input type="text" id="uname" name="uname" value="{{ datas['uname'] }}" required><br>
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" value="{{ datas['contact'] }}" required><br>
+        <input type="submit" value="Save Changes">
+    </form>
+{% endblock %}
